@@ -1,0 +1,377 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px; /* smaller base font for entire body */
+  color: #222;
+  background: #e0f2f1;
+}
+
+/* Navbar */
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 11px; /* smaller navbar font */
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: #ff4081;
+  color: #fff;
+}
+
+/* Home Page */
+body.home {
+  background: linear-gradient(135deg, #00bcd4, #6a11cb);
+  color: #fff;
+  text-align: center;
+}
+
+.profile {
+  margin-top: 40px; /* smaller margin */
+}
+
+.profile img {
+  width: 130px; /* smaller image */
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+}
+
+.profile h1 {
+  font-size: 18px; /* even smaller heading */
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* About Section - Edited for single line */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 8px;
+  background: #e0f7fa;
+}
+
+.images-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.images-container img {
+  width: 100px; /* smaller images */
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.images-container img:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+}
+
+.about-content {
+  max-width: 100%; /* allow full width */
+  text-align: center;
+}
+
+.about-content h1 {
+  font-size: 0.9em; /* even smaller heading */
+  margin-bottom: 8px;
+  color: #00796b;
+}
+
+.about-content p {
+  font-size: 0.65em; /* smaller paragraph */
+  line-height: 1.3;
+  margin-bottom: 6px;
+  white-space: nowrap; /* keep text on one line */
+  overflow: hidden;    /* hide overflow if too long */
+  text-overflow: ellipsis; /* show "..." if it overflows */
+}
+
+/* Footer */
+footer {
+  background: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  margin-top: 15px;
+}
+
+/* Education Section */
+.education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Each education item */
+.edu-item {
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+.edu-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.edu-item.reverse .edu-card {
+  flex-direction: row-reverse;
+}
+
+/* Card container */
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 25px;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #4db6ac, #00796b);
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image */
+.edu-img img {
+  width: 180px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.edu-img img:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Text */
+.edu-text {
+  flex: 1;
+  min-width: 220px;
+}
+.edu-text h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+.edu-text p {
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  background: #00796b;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .edu-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .edu-item.reverse .edu-card {
+    flex-direction: column;
+  }
+  .edu-img img {
+    width: 140px;
+  }
+}
+
+/* Skills Section */
+.skills-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(145deg, #00796b, #004d40);
+  border-radius: 25px;
+  color: #fff;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.skills-section h2 {
+  font-size: 1.5em; /* smaller heading */
+  margin-bottom: 25px;
+  color: #e0f7fa;
+}
+
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill {
+  display: inline-block;
+  padding: 10px 20px; /* smaller padding */
+  border-radius: 50px; /* oval shape */
+  background: linear-gradient(135deg, #29b6f6, #0288d1);
+  font-size: 0.5em; /* smaller font */
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none; /* clickable without underline */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #26c6da, #01579b);
+}
+
+/* Projects Section */
+.projects-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 1.2em;
+  margin-bottom: 50px;
+  color: #00796b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Projects Grid for Pyramid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "p1 p1"
+    "p2 p3";
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Individual Project Cards */
+.project {
+  background: linear-gradient(135deg, #0288d1, #26c6da);
+  color: #fff;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+  text-align: center;
+  border-left: 5px solid #004d40;
+}
+
+.project i {
+  margin-bottom: 15px;
+  color: #e0f7fa;
+}
+
+.project h3 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.project p {
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+/* Assign grid areas */
+.project1 { grid-area: p1; }
+.project2 { grid-area: p2; }
+.project3 { grid-area: p3; }
+
+/* Contact Section */
+.contact-section {
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #00796b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Social Icons */
+.contact-social {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.contact-social i {
+  font-size: 2em;
+  color: #0288d1;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.contact-social i:hover {
+  color: #26c6da;
+  transform: scale(1.2);
+}
+
+/* Contact Form Card */
+.contact-card {
+  background: linear-gradient(145deg, #0288d1, #26c6da);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-card input,
+.contact-card textarea
